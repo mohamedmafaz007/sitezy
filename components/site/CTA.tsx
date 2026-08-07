@@ -28,14 +28,18 @@ export function CTA({ onBookDemo }: { onBookDemo: () => void }) {
             />
 
             <div className="relative">
-              <motion.span
+              <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-xs font-semibold text-white/80"
+                className="mb-4 inline-flex items-center gap-3.5 rounded-2xl bg-white/95 px-6 py-3 shadow-lg backdrop-blur-md"
               >
-                Join the modern construction revolution
-              </motion.span>
+                <img src="/logo-transparent.png" alt="SITEZY Logo" className="h-14 sm:h-20 w-auto object-contain" />
+                <div className="h-7 w-px bg-slate-300" />
+                <span className="text-xs font-extrabold uppercase tracking-widest text-brand-teal">
+                  Modern Construction Revolution
+                </span>
+              </motion.div>
 
               <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
                 Start Building Smarter Today.
@@ -49,7 +53,7 @@ export function CTA({ onBookDemo }: { onBookDemo: () => void }) {
                 <Button
                   onClick={() => document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' })}
                   size="lg"
-                  className="group h-12 rounded-xl bg-brand-orange px-7 text-white hover:bg-brand-orangeDark"
+                  className="group h-12 rounded-xl bg-brand-teal px-7 text-white hover:bg-brand-tealDark shadow-glow-teal font-bold"
                 >
                   <Smartphone className="mr-2 h-4 w-4" /> Download Builders App
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -57,17 +61,17 @@ export function CTA({ onBookDemo }: { onBookDemo: () => void }) {
                 <Button
                   onClick={() => document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' })}
                   size="lg"
-                  variant="outline"
-                  className="h-12 rounded-xl border-white/20 bg-white/5 px-7 text-white hover:bg-white/10"
+                  className="group h-12 rounded-xl bg-brand-teal px-7 text-white hover:bg-brand-tealDark shadow-glow-teal font-bold"
                 >
                   <Smartphone className="mr-2 h-4 w-4" /> Download Client App
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button
                   onClick={onBookDemo}
                   size="lg"
-                  className="h-12 rounded-xl bg-white px-7 text-ink-900 hover:bg-white/90"
+                  className="h-12 rounded-xl bg-white px-7 text-ink-900 hover:bg-white/90 font-bold shadow-md"
                 >
-                  <CalendarCheck className="mr-2 h-4 w-4" /> Book Free Demo
+                  <CalendarCheck className="mr-2 h-4 w-4 text-brand-teal" /> Book Free Demo
                 </Button>
               </div>
             </div>

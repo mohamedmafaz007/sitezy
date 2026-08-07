@@ -7,8 +7,14 @@ const outfit = Outfit({ subsets: ['latin'], weight: ['300','400','500','600','70
 
 export const metadata: Metadata = {
   title: 'SITEZY — Build Smarter. Manage Better. Deliver Faster.',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   description:
     'SITEZY transforms construction management by connecting builders and homeowners in one intelligent ecosystem. Real-time site tracking, labour, materials, budgets, and live project progress.',
+  icons: {
+    icon: '/logo-transparent.png',
+    shortcut: '/favicon.ico',
+    apple: '/logo-transparent.png',
+  },
   keywords: [
     'construction management software',
     'builder app',
@@ -22,13 +28,13 @@ export const metadata: Metadata = {
     description:
       'The future of construction management. One ecosystem, two tailored experiences for builders and homeowners.',
     type: 'website',
-    images: [{ url: 'https://bolt.new/static/og_default.png' }],
+    images: [{ url: '/logo.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SITEZY — Build Smarter. Manage Better. Deliver Faster.',
     description: 'The future of construction management, built for everyone.',
-    images: [{ url: 'https://bolt.new/static/og_default.png' }],
+    images: [{ url: '/logo.png' }],
   },
 };
 

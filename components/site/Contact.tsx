@@ -2,13 +2,12 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, Building2, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, Building2, Send, CheckCircle2, Loader2, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Reveal } from '@/lib/anim';
 import { useToast } from '@/hooks/use-toast';
-import { IMAGES } from '@/lib/images';
 
 const PROJECT_TYPES = ['Custom Home', 'Multi-Unit Build', 'Renovation', 'Commercial', 'Other'];
 
@@ -36,7 +35,6 @@ export function Contact() {
     ev.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    // Simulated async submit (no backend wired for contact)
     setTimeout(() => {
       setLoading(false);
       setDone(true);
@@ -59,7 +57,7 @@ export function Contact() {
       <div className="absolute inset-0 bg-mesh-light opacity-40" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          {/* LEFT — info */}
+          {/* LEFT — info & map */}
           <Reveal>
             <span className="text-sm font-bold uppercase tracking-widest text-brand-orange">
               Contact
@@ -76,11 +74,26 @@ export function Contact() {
             <div className="mt-8 space-y-4">
               <ContactRow icon={Mail} label="Email" value="hello@sitezy.com" />
               <ContactRow icon={Phone} label="Phone" value="+1 (555) 012-3456" />
-              <ContactRow icon={Building2} label="Office" value="123 Builder Street, San Francisco" />
+              <ContactRow icon={Building2} label="Office" value="123 Builder Street, San Francisco, CA" />
             </div>
 
-            <div className="mt-8 overflow-hidden rounded-2xl shadow-premium">
-              <img src={IMAGES.problem.handshake} alt="Team meeting" className="aspect-[16/9] w-full object-cover" />
+            {/* Interactive Location Map Container */}
+            <div className="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-premium">
+              <div className="absolute left-3 top-3 z-10 flex items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1.5 text-xs font-bold text-white backdrop-blur shadow-md">
+                <MapPin className="h-3.5 w-3.5 text-brand-orange animate-bounce" />
+                <span>SITEZY HQ · San Francisco</span>
+              </div>
+              <iframe
+                title="SITEZY Office Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0864887372274!2d-122.39997268468202!3d37.78793097975691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807ed78082a5%3A0xe54e604f323a9d9e!2sMarket%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1689000000000!5m2!1sen!2sus"
+                width="100%"
+                height="240"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full grayscale filter transition-all duration-500 hover:grayscale-0"
+              />
             </div>
           </Reveal>
 
@@ -158,7 +171,7 @@ export function Contact() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="mt-6 h-12 w-full rounded-xl bg-brand-orange text-white hover:bg-brand-orangeDark"
+                className="mt-6 h-12 w-full rounded-xl bg-brand-orange text-white hover:bg-brand-orangeDark font-bold shadow-glow-orange"
               >
                 {loading ? (
                   <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…</>

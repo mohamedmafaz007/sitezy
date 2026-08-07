@@ -8,7 +8,6 @@ import { BuildersSection } from '@/components/site/BuildersSection';
 import { ClientSection } from '@/components/site/ClientSection';
 import { HowItWorks } from '@/components/site/HowItWorks';
 import { FeaturesGrid } from '@/components/site/FeaturesGrid';
-import { LiveDashboard } from '@/components/site/LiveDashboard';
 import { Screenshots } from '@/components/site/Screenshots';
 import { Trust } from '@/components/site/Trust';
 import { Testimonials } from '@/components/site/Testimonials';
@@ -29,19 +28,18 @@ export default function Home() {
     <>
       <ScrollProgress />
       <Navbar onBookDemo={() => setDemoOpen(true)} />
-      <main>
+      <main className="w-full max-w-full relative">
         <Hero onWatchDemo={() => setVideoOpen(true)} />
         <WhySitezy />
         <BuildersSection onDownload={() => document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' })} />
         <ClientSection onDownload={() => document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' })} />
         <HowItWorks />
         <FeaturesGrid />
-        <LiveDashboard />
         <Screenshots />
         <Trust />
         <Testimonials />
-        <FAQ />
         <Download />
+        <FAQ />
         <CTA onBookDemo={() => setDemoOpen(true)} />
         <Contact />
       </main>

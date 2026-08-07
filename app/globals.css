@@ -5,25 +5,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
+  /* SITEZY Logo Brand Theme: Deep Ocean Teal/Navy #1c4c61 */
+  --brand-navy: #1c4c61;
+  --brand-navy-light: #2a6f8d;
+  --brand-navy-mid: #143b4c;
+  --brand-orange: #1c4c61;
+  --brand-orange-dark: #0e2b38;
+
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --foreground: 198 55% 15%;
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 198 55% 15%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --primary: 222 47% 11%;
+  --popover-foreground: 198 55% 15%;
+  --primary: 198 55% 25%;
   --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 25 95% 53%;
+  --secondary: 198 30% 95%;
+  --secondary-foreground: 198 55% 25%;
+  --muted: 198 30% 95%;
+  --muted-foreground: 198 20% 45%;
+  --accent: 198 55% 25%;
   --accent-foreground: 210 40% 98%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 222 47% 11%;
+  --border: 198 25% 90%;
+  --input: 198 25% 90%;
+  --ring: 198 55% 25%;
   --radius: 0.75rem;
 }
 
@@ -35,13 +42,30 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
   background: #ffffff;
   color: hsl(var(--foreground));
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
 }
 
 .font-display {
@@ -52,24 +76,11 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Premium scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f97316, #fdba74);
-  border-radius: 999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ea580c, #fb923c);
-}
+
 
 ::selection {
-  background: rgba(249, 115, 22, 0.25);
-  color: #0f172a;
+  background: rgba(28, 76, 97, 0.20);
+  color: #1c4c61;
 }
 
 /* Noise texture overlay */
@@ -84,35 +95,56 @@ body {
 
 /* Grid overlay */
 .grid-overlay {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(28, 76, 97, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 76, 97, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 /* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 32px rgba(28, 76, 97, 0.06);
 }
 
 .glass-dark {
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(14, 43, 56, 0.55);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Animated gradient text */
+/* Animated gradient text - sitEzy Logo Ocean Teal */
 .gradient-text {
-  background: linear-gradient(120deg, #0f172a 0%, #f97316 50%, #3b82f6 100%);
+  background: linear-gradient(120deg, #1c4c61 0%, #2a6f8d 50%, #0e2b38 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 8s ease infinite;
+}
+
+.gradient-text-orange {
+  background: linear-gradient(120deg, #1c4c61 0%, #2a6f8d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(120deg, #1c4c61 0%, #2a6f8d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-navy {
+  background: linear-gradient(120deg, #1c4c61 0%, #2a6f8d 70%, #0e2b38 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-orange {
@@ -123,7 +155,14 @@ body {
 }
 
 .gradient-text-blue {
-  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(120deg, #142147 0%, #1B2A5E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-navy {
+  background: linear-gradient(120deg, #142147 0%, #f97316 70%, #1B2A5E 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -138,6 +177,9 @@ body {
 }
 .shadow-glow-blue {
   box-shadow: 0 20px 60px -15px rgba(59, 130, 246, 0.45), 0 0 40px rgba(59, 130, 246, 0.15);
+}
+.shadow-glow-navy {
+  box-shadow: 0 20px 60px -15px rgba(20, 33, 71, 0.55), 0 0 40px rgba(20, 33, 71, 0.30);
 }
 
 /* Floating animation */
@@ -229,8 +271,8 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Section divider gradient line */
+/* Section divider gradient line - Navy+Orange */
 .divider-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(15,23,42,0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(20,33,71,0.18), rgba(249,115,22,0.25), rgba(20,33,71,0.18), transparent);
 }

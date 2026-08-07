@@ -41,7 +41,7 @@ export function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="relative overflow-hidden bg-ink-950 text-white">
+    <footer className="relative overflow-hidden bg-brand-navyDeep text-white">
       <div className="absolute inset-0 bg-mesh-dark opacity-50" />
       <div className="absolute inset-0 grid-overlay opacity-10" />
 
@@ -81,15 +81,14 @@ export function Footer() {
       {/* Links */}
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-6">
-          {/* brand */}
+          {/* brand - Transparent SITEZY Logo */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-orangeDark shadow-glow-orange">
-                <span className="font-display text-xl font-extrabold text-white">S</span>
+            <button onClick={scrollTop} className="flex items-center gap-2 transition-transform hover:scale-[1.02]">
+              <div className="rounded-2xl bg-white/95 px-6 py-3.5 backdrop-blur-md shadow-md">
+                <img src="/logo-transparent.png" alt="SITEZY Logo" className="h-18 sm:h-24 w-auto object-contain" />
               </div>
-              <span className="font-display text-2xl font-extrabold tracking-tight">SITEZY</span>
-            </div>
-            <p className="mt-4 max-w-xs text-sm text-white/60">
+            </button>
+            <p className="mt-4 max-w-xs text-sm text-white/60 leading-relaxed">
               The future of construction management — one ecosystem connecting
               builders and homeowners with total transparency.
             </p>

@@ -35,39 +35,38 @@ export function Navbar({ onBookDemo }: { onBookDemo: () => void }) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-        scrolled ? 'py-2' : 'py-4'
+        scrolled ? 'py-2' : 'py-3.5'
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <nav
           className={cn(
-            'flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500',
+            'flex items-center justify-between rounded-2xl px-5 py-2.5 transition-all duration-500',
             scrolled
-              ? 'glass shadow-premium'
-              : 'border border-transparent bg-transparent'
+              ? 'glass shadow-premium border border-slate-200/80 bg-white/90 backdrop-blur-xl'
+              : 'border border-slate-200/80 bg-white/95 shadow-md backdrop-blur-lg'
           )}
         >
-          {/* Logo */}
+          {/* Brand Logo */}
           <button
             onClick={() => go('#home')}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 transition-transform hover:scale-105 focus:outline-none shrink-0"
             aria-label="SITEZY home"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-orangeDark shadow-glow-orange">
-              <span className="font-display text-lg font-extrabold text-white">S</span>
-            </div>
-            <span className="font-display text-xl font-extrabold tracking-tight text-ink-900">
-              SITEZY
-            </span>
+            <img
+              src="/logo-transparent.png"
+              alt="SITEZY Logo"
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain drop-shadow-sm"
+            />
           </button>
 
-          {/* Desktop nav */}
-          <ul className="hidden items-center gap-1 lg:flex">
+          {/* Navigation Links */}
+          <ul className="hidden items-center gap-1.5 xl:gap-2 lg:flex">
             {NAV.map((item) => (
               <li key={item.href}>
                 <button
                   onClick={() => go(item.href)}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-ink-600 transition-colors hover:bg-ink-50 hover:text-ink-900"
+                  className="rounded-xl px-3 py-1.5 text-xs font-bold text-slate-600 transition-all hover:bg-slate-100 hover:text-slate-900 sm:text-sm"
                 >
                   {item.label}
                 </button>
@@ -75,29 +74,29 @@ export function Navbar({ onBookDemo }: { onBookDemo: () => void }) {
             ))}
           </ul>
 
-          {/* Desktop actions */}
-          <div className="hidden items-center gap-2 lg:flex">
+          {/* CTA Action Buttons */}
+          <div className="hidden items-center gap-2.5 lg:flex shrink-0">
             <Button
               onClick={onBookDemo}
               variant="ghost"
               size="sm"
-              className="text-ink-700 hover:bg-ink-50"
+              className="text-brand-navy hover:bg-brand-navy/10 font-bold px-3.5"
             >
               <CalendarCheck className="mr-1.5 h-4 w-4" /> Book Demo
             </Button>
             <Button
               onClick={() => go('#download')}
               size="sm"
-              className="bg-ink-900 text-white hover:bg-ink-800"
+              className="bg-brand-navy text-white hover:bg-brand-navyLight shadow-md font-bold px-4 py-2"
             >
               <Smartphone className="mr-1.5 h-4 w-4" /> Download Apps
             </Button>
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile menu toggle */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-ink-900 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-800 lg:hidden hover:bg-slate-200 transition-colors"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -113,7 +112,7 @@ export function Navbar({ onBookDemo }: { onBookDemo: () => void }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="mx-4 mt-2 overflow-hidden rounded-2xl glass shadow-premium lg:hidden"
+            className="mx-3 sm:mx-6 mt-2 overflow-hidden rounded-2xl glass shadow-premium lg:hidden"
           >
             <ul className="flex flex-col p-3">
               {NAV.map((item, i) => (
@@ -138,13 +137,13 @@ export function Navbar({ onBookDemo }: { onBookDemo: () => void }) {
                     onBookDemo();
                   }}
                   variant="outline"
-                  className="w-full"
+                  className="w-full border-brand-navy/30 text-brand-navy"
                 >
                   <CalendarCheck className="mr-1.5 h-4 w-4" /> Book Demo
                 </Button>
                 <Button
                   onClick={() => go('#download')}
-                  className="w-full bg-ink-900 text-white hover:bg-ink-800"
+                  className="w-full bg-brand-navy text-white hover:bg-brand-navyLight font-bold"
                 >
                   <Smartphone className="mr-1.5 h-4 w-4" /> Download Apps
                 </Button>
