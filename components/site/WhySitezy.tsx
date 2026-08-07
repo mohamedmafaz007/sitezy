@@ -84,33 +84,33 @@ export function WhySitezy() {
 
           {/* Premium SITEZY Brand Logo Showcase Card */}
           <Reveal delay={0.15} className="relative">
-            <div className="relative flex min-h-[440px] w-full flex-col justify-between overflow-hidden rounded-3xl border border-brand-teal/25 bg-gradient-to-br from-white via-slate-50 to-teal-50/50 p-8 sm:p-10 shadow-premium transition-all duration-500 hover:border-brand-teal/45 hover:shadow-glow-teal">
+            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand-teal/25 bg-gradient-to-br from-white via-slate-50 to-teal-50/50 p-6 sm:p-7 shadow-premium transition-all duration-500 hover:border-brand-teal/45 hover:shadow-glow-teal">
               {/* Dynamic Glow Blobs & Grid Pattern */}
-              <div className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-brand-teal/20 blur-3xl animate-pulse" />
-              <div className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 rounded-full bg-brand-tealLight/20 blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
+              <div className="pointer-events-none absolute -left-16 -top-16 h-60 w-60 rounded-full bg-brand-teal/20 blur-3xl animate-pulse" />
+              <div className="pointer-events-none absolute -right-16 -bottom-16 h-60 w-60 rounded-full bg-brand-tealLight/20 blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
               <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
 
-              {/* Center SITEZY Transparent Logo Display - BIGGER SIZE */}
-              <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center py-6">
+              {/* Center SITEZY Transparent Logo Display - COMPACT SIZE */}
+              <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center py-3 sm:py-4">
                 <motion.img
                   src="/logo-transparent.png"
                   alt="SITEZY Brand Logo"
-                  className="h-44 xs:h-56 sm:h-80 md:h-[360px] max-w-full object-contain filter drop-shadow-[0_20px_45px_rgba(28,76,97,0.35)]"
+                  className="h-24 xs:h-28 sm:h-36 md:h-44 max-w-full object-contain filter drop-shadow-[0_10px_25px_rgba(28,76,97,0.25)]"
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.7 }}
                 />
-                <span className="mt-6 sm:mt-8 rounded-full bg-brand-teal px-5 py-2 sm:px-7 sm:py-2.5 text-[10px] sm:text-xs font-black uppercase tracking-widest text-white shadow-md border border-brand-tealLight/30 backdrop-blur-md">
+                <span className="mt-4 sm:mt-5 rounded-full bg-brand-teal px-4 py-1.5 sm:px-5 sm:py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest text-white shadow-md border border-brand-tealLight/30 backdrop-blur-md">
                   ONE PLATFORM · TWO TAILORED APPS
                 </span>
               </div>
 
               {/* Bottom Quote Card */}
-              <div className="relative z-10 rounded-2xl bg-white/90 p-4 backdrop-blur-md border border-brand-teal/15 shadow-sm text-left">
-                <p className="text-sm font-semibold text-ink-900">
+              <div className="relative z-10 rounded-2xl bg-white/90 p-3.5 sm:p-4 backdrop-blur-md border border-brand-teal/15 shadow-sm text-left">
+                <p className="text-xs sm:text-sm font-semibold text-ink-900 leading-snug">
                   “Now my clients can see everything on their phones in real time.”
                 </p>
-                <p className="mt-1 text-xs text-ink-500 font-medium">— David R., Custom Home Builder</p>
+                <p className="mt-1 text-[11px] sm:text-xs text-ink-500 font-medium">— David R., Custom Home Builder</p>
               </div>
             </div>
 
@@ -120,10 +120,10 @@ export function WhySitezy() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="absolute right-2 -top-4 sm:-right-4 sm:-top-4 rounded-2xl bg-ink-900 p-3 sm:p-4 text-white shadow-premium border border-brand-teal/40"
+              className="absolute right-1 -top-3 sm:-right-2 sm:-top-3 rounded-2xl bg-ink-900 p-2.5 sm:p-3 text-white shadow-premium border border-brand-teal/40"
             >
-              <p className="font-display text-xl sm:text-2xl font-extrabold text-brand-tealLight">98%</p>
-              <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-white/70">Client Satisfaction</p>
+              <p className="font-display text-lg sm:text-xl font-extrabold text-brand-tealLight leading-none">98%</p>
+              <p className="text-[8px] sm:text-[9px] uppercase font-bold tracking-wider text-white/70 mt-0.5">Client Satisfaction</p>
             </motion.div>
           </Reveal>
         </div>
