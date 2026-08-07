@@ -27,23 +27,23 @@ export function WhySitezy() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Problem / Solution */}
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <Reveal>
+          <Reveal className="flex flex-col items-center text-center">
             {/* Section Badge */}
-            <div className="mb-4 inline-flex items-center rounded-2xl bg-white/90 px-5 py-2 border border-brand-teal/20 shadow-sm backdrop-blur-md">
+            <div className="mb-4 inline-flex items-center justify-center rounded-2xl bg-white/90 px-5 py-2 border border-brand-teal/20 shadow-sm backdrop-blur-md">
               <span className="text-xs font-extrabold uppercase tracking-widest text-brand-teal">
                 Why SITEZY
               </span>
             </div>
 
-            <h2 className="mt-2 font-display text-4xl font-extrabold leading-tight tracking-tight text-ink-900 sm:text-5xl">
+            <h2 className="mt-2 font-display text-4xl font-extrabold leading-tight tracking-tight text-ink-900 sm:text-5xl text-center">
               Bridging the gap between the field and the homeowner.
             </h2>
-            <p className="mt-5 text-lg text-ink-500 leading-relaxed">
+            <p className="mt-5 text-lg text-ink-500 leading-relaxed text-center max-w-2xl">
               Historically, construction has been plagued by miscommunication,
               hidden costs, and frustrated clients. Contractors juggle workers,
               materials and expenses across sites. Clients are left in the dark.
             </p>
-            <p className="mt-4 text-lg text-ink-500 leading-relaxed">
+            <p className="mt-4 text-lg text-ink-500 leading-relaxed text-center max-w-2xl">
               We solve this with a two-sided platform. Contractors get a rugged
               management dashboard. Clients get a beautiful app to watch their
               dream home come to life.{' '}
@@ -52,7 +52,7 @@ export function WhySitezy() {
               </span>
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 w-full sm:grid-cols-2 text-left">
               <div className="rounded-2xl glass p-5 border border-ink-100/80 shadow-sm transition-all hover:shadow-md">
                 <h3 className="font-display text-lg font-bold text-ink-900">For Builders</h3>
                 <p className="mt-1 text-xs text-ink-500 leading-relaxed">

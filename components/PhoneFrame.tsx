@@ -55,38 +55,6 @@ export function PhoneFrame({
       )}
       style={{ transform: `rotate(${rotate}deg)` }}
     >
-      {/* Side buttons */}
-      <div
-        className={cn(
-          'absolute -left-[3px] rounded-full bg-ink-800',
-          isMobile
-            ? 'top-14 h-8 w-[2px]'
-            : isCompact
-            ? 'top-20 h-10 w-[3px]'
-            : 'top-24 h-12 w-[3px]'
-        )}
-      />
-      <div
-        className={cn(
-          'absolute -left-[3px] rounded-full bg-ink-800',
-          isMobile
-            ? 'top-26 h-10 w-[2px]'
-            : isCompact
-            ? 'top-34 h-12 w-[3px]'
-            : 'top-40 h-16 w-[3px]'
-        )}
-      />
-      <div
-        className={cn(
-          'absolute -right-[3px] rounded-full bg-ink-800',
-          isMobile
-            ? 'top-20 h-12 w-[2px]'
-            : isCompact
-            ? 'top-28 h-16 w-[3px]'
-            : 'top-32 h-20 w-[3px]'
-        )}
-      />
-
       {/* Screen container */}
       <div
         className={cn(

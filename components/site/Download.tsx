@@ -147,7 +147,6 @@ export function Download() {
                   {/* Authentic Glowing Store Buttons */}
                   <div className="mt-5 space-y-2.5">
                     <StoreButton platform="google" accent="blue" />
-                    <StoreButton platform="apple" accent="blue" />
                   </div>
                 </div>
               </div>
