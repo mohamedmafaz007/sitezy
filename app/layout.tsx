@@ -3,13 +3,13 @@ import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const outfit = Outfit({ subsets: ['latin'], weight: ['300','400','500','600','700','800','900'], variable: '--font-outfit', display: 'swap' });
+const outfit = Outfit({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'], variable: '--font-outfit', display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'SITEZY — Build Smarter. Manage Better. Deliver Faster.',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   description:
     'SITEZY transforms construction management by connecting builders and homeowners in one intelligent ecosystem. Real-time site tracking, labour, materials, budgets, and live project progress.',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   icons: {
     icon: '/logo-transparent.png',
     shortcut: '/favicon.ico',
