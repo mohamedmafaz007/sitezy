@@ -8,10 +8,28 @@ import {
 import { useToast } from '@/hooks/use-toast';
 
 const LINKS = {
-  'For Builders': ['Pricing', 'Demo Booking', 'Partner Program', 'Features'],
-  'For Homeowners': ['How it Works', 'FAQ', 'Support Center', 'Client App'],
-  Company: ['About Us', 'Careers', 'Contact', 'Blog'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Security'],
+  'For Builders': [
+    { label: 'Pricing', href: '#' },
+    { label: 'Demo Booking', href: '#' },
+    { label: 'Partner Program', href: '#' },
+    { label: 'Features', href: '#' }
+  ],
+  'For Homeowners': [
+    { label: 'How it Works', href: '#' },
+    { label: 'FAQ', href: '#' },
+    { label: 'Support Center', href: '#' },
+    { label: 'Client App', href: '#' }
+  ],
+  Company: [
+    { label: 'About Us', href: '#' },
+    { label: 'Careers', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Blog', href: '#' }
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' }
+  ],
 };
 
 const SOCIALS = [
@@ -114,9 +132,9 @@ export function Footer() {
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-white/70 transition-colors hover:text-brand-orange">
-                      {item}
+                  <li key={item.label}>
+                    <a href={item.href} className="text-sm text-white/70 transition-colors hover:text-brand-orange">
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -130,8 +148,8 @@ export function Footer() {
             © {new Date().getFullYear()} SITEZY. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/40">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
+            <a href="/privacy" className="hover:text-white">Privacy</a>
+            <a href="/terms" className="hover:text-white">Terms</a>
             <BackToTop onClick={scrollTop} />
           </div>
         </div>

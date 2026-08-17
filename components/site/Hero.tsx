@@ -52,12 +52,12 @@ export function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-x-hidden pt-20 sm:pt-24"
+      className="relative min-h-screen overflow-hidden pt-20 sm:pt-24"
     >
       {/* background imagery */}
       <motion.div
         style={{ y: bgY, scale: bgScale }}
-        className="absolute inset-0 z-0"
+        className="absolute -inset-y-[250px] inset-x-0 z-0"
       >
         <img
           src={IMAGES.hero.construction}
