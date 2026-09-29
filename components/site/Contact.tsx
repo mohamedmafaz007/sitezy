@@ -34,17 +34,20 @@ export function Contact() {
   const submit = (ev: React.FormEvent) => {
     ev.preventDefault();
     if (!validate()) return;
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setDone(true);
-      toast({
-        title: 'Message sent',
-        description: "We'll be in touch within one business day.",
-      });
-      setForm({ name: '', phone: '', company: '', email: '', type: '', message: '' });
-      setTimeout(() => setDone(false), 4000);
-    }, 1400);
+    
+    const whatsappNumber = "918122552055";
+    const text = `Name: ${form.name}%0APhone: ${form.phone}%0ACompany: ${form.company}%0AEmail: ${form.email}%0AProject Type: ${form.type}%0AMessage: ${form.message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    setDone(true);
+    toast({
+      title: 'Redirecting to WhatsApp',
+      description: "Opening WhatsApp to send your message.",
+    });
+    setForm({ name: '', phone: '', company: '', email: '', type: '', message: '' });
+    setTimeout(() => setDone(false), 4000);
   };
 
   const set = (k: string, v: string) => {
@@ -72,26 +75,26 @@ export function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <ContactRow icon={Mail} label="Email" value="hello@sitezy.com" />
-              <ContactRow icon={Phone} label="Phone" value="+1 (555) 012-3456" />
-              <ContactRow icon={Building2} label="Office" value="123 Builder Street, San Francisco, CA" />
+              <ContactRow icon={Mail} label="Email" value="app.sitezy@gmail.com" />
+              <ContactRow icon={Phone} label="Phone" value="8122552055" />
+              <ContactRow icon={Building2} label="Office" value="32-A, First floor, 100 Feet Rd, next to AVSS Hospital, Kuruvikaran Salai, Madurai, Tamil Nadu 625009" />
             </div>
 
             {/* Interactive Location Map Container */}
             <div className="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-premium">
               <div className="absolute left-3 top-3 z-10 flex items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1.5 text-xs font-bold text-white backdrop-blur shadow-md">
                 <MapPin className="h-3.5 w-3.5 text-brand-orange animate-bounce" />
-                <span>SITEZY HQ · San Francisco</span>
+                <span>Aatzy Technologies · Madurai</span>
               </div>
               <iframe
                 title="SITEZY Office Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0864887372274!2d-122.39997268468202!3d37.78793097975691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807ed78082a5%3A0xe54e604f323a9d9e!2sMarket%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1689000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2017769128415!2d78.1393473!3d9.9171465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5b122b490cf%3A0x37aa87c335f0e935!2sAatzy%20Technologies!5e0!3m2!1sen!2sin!4v1790663431390!5m2!1sen!2sin"
                 width="100%"
                 height="240"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 className="w-full grayscale filter transition-all duration-500 hover:grayscale-0"
               />
             </div>
