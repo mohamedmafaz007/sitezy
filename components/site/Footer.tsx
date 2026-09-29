@@ -63,38 +63,7 @@ export function Footer() {
       <div className="absolute inset-0 bg-mesh-dark opacity-50" />
       <div className="absolute inset-0 grid-overlay opacity-10" />
 
-      {/* Newsletter band */}
-      <div className="relative border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div>
-              <h3 className="font-display text-3xl font-extrabold leading-tight">
-                Join the modern construction revolution.
-              </h3>
-              <p className="mt-2 text-white/60">
-                Subscribe for the latest tips on construction management and home building.
-              </p>
-            </div>
-            <form onSubmit={subscribe} className="flex w-full max-w-md gap-2 lg:ml-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@email.com"
-                className="h-12 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 focus:border-brand-orange focus:outline-none"
-                aria-label="Email address"
-              />
-              <button
-                type="submit"
-                className="flex h-12 items-center gap-2 rounded-xl bg-brand-orange px-5 font-bold text-white transition hover:bg-brand-orangeDark"
-              >
-                {subscribed ? <CheckCircle2 className="h-5 w-5" /> : <Send className="h-4 w-4" />}
-                <span className="hidden sm:inline">{subscribed ? 'Done' : 'Subscribe'}</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+
 
       {/* Links */}
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
